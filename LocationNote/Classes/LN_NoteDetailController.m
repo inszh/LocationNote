@@ -108,7 +108,6 @@ static char kUserLocation;
     LN_DataModel *dataM=[LN_DataModel new];
     dataM.currentPosition=[NSString stringWithFormat:@"%f|%f", userLocation.location.coordinate.latitude ,userLocation.location.coordinate.longitude];
 //    dataM.hostID =arc4random() ;
-
     dataM.saveTime=[NSString stringWithFormat:@"%@",[NSDate date]];
     dataM.content=self.contentTextView.text;
     

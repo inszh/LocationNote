@@ -8,6 +8,7 @@
 
 #import "CoreModel.h"
 
+
 @interface LN_DataModel : CoreModel
 
 @property(nonatomic,copy)NSString * content;

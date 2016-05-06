@@ -10,6 +10,8 @@
 #import "BMKTool.h"
 #import "UIView+Extension.h"
 #import "LN_NoteDetailController.h"
+#import "LN_DataModel.h"
+#import "LN_UserLocation.h"
 
 @interface LN_MapViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 
@@ -58,13 +60,36 @@
 
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
-    /**
-     *  CLLocationCoordinate2D 当前代理方法的经纬度坐标
-     */
-    CLLocationCoordinate2D coor;
-    coor.latitude =  userLocation.location.coordinate.latitude;
-    coor.longitude = userLocation.location.coordinate.longitude;
     
+    [LN_DataModel selectWhere:nil groupBy:nil orderBy:nil limit:nil selectResultsBlock:^(NSArray *selectResults) {
+        
+        for (LN_DataModel *dataM in selectResults) {
+            
+            NSArray * coordinateArray= [dataM.currentPosition componentsSeparatedByString:@"|"];
+            
+            CLLocationDegrees latitude=[coordinateArray.firstObject doubleValue];
+            CLLocationDegrees longitude=[coordinateArray.lastObject doubleValue];
+            DLog(@"%f---%f",latitude,longitude);
+            DLog(@"%f---%f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
+
+//            CLLocation *location=[[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+            
+            BMKMapPoint point1 = BMKMapPointForCoordinate(CLLocationCoordinate2DMake(latitude,longitude));
+            
+            BMKMapPoint point2 = BMKMapPointForCoordinate(userLocation.location.coordinate);
+
+            CLLocationDistance distance = BMKMetersBetweenMapPoints(point1, point2);
+           
+            DLog(@"%.2f米",distance);
+            
+            
+        }
+        
+
+    }];
+    
+    
+
     /**
      *  一会放大的范围
      */
@@ -72,7 +97,7 @@
     region.span.latitudeDelta  = 0.01;
     region.span.longitudeDelta = 0.01;
     
-    BMKCoordinateRegion viewRegion = BMKCoordinateRegionMake(coor, region.span);
+    BMKCoordinateRegion viewRegion = BMKCoordinateRegionMake(userLocation.location.coordinate, region.span);
     BMKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
     [_mapView setRegion:adjustedRegion animated:YES];
     BMKLocationViewDisplayParam *param = [[BMKLocationViewDisplayParam alloc] init];
@@ -99,5 +124,12 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [_locService startUserLocationService];
+
+}
 
 @end

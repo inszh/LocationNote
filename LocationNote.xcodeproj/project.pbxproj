@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		498B35AD1CDC770C009E424D /* LN_UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 498B35AC1CDC770C009E424D /* LN_UserLocation.m */; };
 		49F5814E1CD9D5E9005EE541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5814D1CD9D5E9005EE541 /* main.m */; };
 		49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F581501CD9D5E9005EE541 /* AppDelegate.m */; };
 		49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F581551CD9D5E9005EE541 /* Main.storyboard */; };
@@ -86,6 +87,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		498B35AB1CDC770C009E424D /* LN_UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_UserLocation.h; sourceTree = "<group>"; };
+		498B35AC1CDC770C009E424D /* LN_UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_UserLocation.m; sourceTree = "<group>"; };
 		49F581491CD9D5E9005EE541 /* LocationNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F5814D1CD9D5E9005EE541 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49F5814F1CD9D5E9005EE541 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -316,6 +319,8 @@
 				49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */,
 				49F584231CDB4000005EE541 /* LN_DataModel.h */,
 				49F584241CDB4000005EE541 /* LN_DataModel.m */,
+				498B35AB1CDC770C009E424D /* LN_UserLocation.h */,
+				498B35AC1CDC770C009E424D /* LN_UserLocation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -770,6 +775,7 @@
 				49F584101CDB3A26005EE541 /* FMDatabaseAdditions.m in Sources */,
 				49F584161CDB3A26005EE541 /* CoreModel+Cache.m in Sources */,
 				49F584191CDB3A26005EE541 /* NSObject+Delete.m in Sources */,
+				498B35AD1CDC770C009E424D /* LN_UserLocation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1011,7 @@
 				49F581781CD9D5E9005EE541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49F581791CD9D5E9005EE541 /* Build configuration list for PBXNativeTarget "LocationNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -1013,6 +1020,7 @@
 				49F5817B1CD9D5E9005EE541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49F5817C1CD9D5E9005EE541 /* Build configuration list for PBXNativeTarget "LocationNoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -1021,6 +1029,7 @@
 				49F5817E1CD9D5E9005EE541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
