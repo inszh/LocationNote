@@ -7,17 +7,33 @@
 //
 
 #import "AppDelegate.h"
+#import "BMKTool.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<BMKGeneralDelegate>
+
+@property(nonatomic,strong)BMKMapManager* mapManager;
 
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    
+    [self startLoctaion];
+    
     return YES;
+}
+
+- (void)startLoctaion
+{
+    self.mapManager=[[BMKMapManager alloc]init];
+    BOOL ret = [self.mapManager start:@"jFPoBwIdqsuhpixAu18wREjW" generalDelegate:self];
+    if (!ret) {
+        NSLog(@"manager start failed!");
+    }
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
