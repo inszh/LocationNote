@@ -31,6 +31,8 @@
 
 - (void)setupMap
 {
+    self.title=kAppName;
+    
     UIButton *locme=[UIButton new];
     locme.frame=CGRectMake(40, ScreenH-kTopBarHeight-80, 40, 40);
     [locme setBackgroundImage:[UIImage imageNamed:@"location_me"] forState:0];
@@ -82,7 +84,6 @@
            
             DLog(@"%.2f米",distance);
             
-            
         }
         
 
@@ -104,12 +105,14 @@
     param.isAccuracyCircleShow = NO;//设置是否显示定位的那个精度圈
     [_mapView updateLocationViewWithParam: param];
     
-    [_locService stopUserLocationService];
     
     /**
      *  更新小圆点
      */
     [_mapView updateLocationData:userLocation];
+    
+    [_locService stopUserLocationService];
+
 }
 
 - (void)locme:(UIButton *)btn

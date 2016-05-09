@@ -8,15 +8,20 @@
 
 #import "LN_NoteDetailController.h"
 #import "BMKTool.h"
-#import "WMCustomDatePicker.h"
 #import "LN_DataModel.h"
 #import <objc/runtime.h>
+#import "LN_ComposeToolbar.h"
+#import "UIView+Extension.h"
+#import "CalendarHomeViewController.h"
 
-@interface LN_NoteDetailController ()<BMKLocationServiceDelegate>
+@interface LN_NoteDetailController ()<BMKLocationServiceDelegate,LN_ComposeToolbarDelegate>
 
 @property(nonatomic,strong)UITextView * contentTextView;
 @property(nonatomic,strong)BMKLocationService * locService;
 @property(nonatomic,assign)int hotid;
+@property(nonatomic,weak)LN_ComposeToolbar * toolbar;
+@property (nonatomic, assign, getter = isChangingKeyboard) BOOL changingKeyboard;
+
 
 @end
 
@@ -30,10 +35,19 @@
     
     [self setupTextView];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    // 键盘即将隐藏, 就会发出UIKeyboardWillHideNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+
+    
     UIBarButtonItem *leftBack = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back"] style:(UIBarButtonItemStylePlain) target:self action:@selector(pop)];
+    
     leftBack.imageInsets = UIEdgeInsetsMake(0, -20, 0, 0);
     self.navigationItem.leftBarButtonItem = leftBack;
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)pop
@@ -52,22 +66,9 @@
 
 - (void)setupTextView
 {
-    self.view.backgroundColor=[UIColor whiteColor];
-    
-    
-    
-    UIBarButtonItem *doneBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStylePlain target:self action:@selector(hideKeyboard)];
-    doneBarButton.width = ceilf(self.view.frame.size.width) / 3 - 30;
+    self.title=kAppName;
 
-    UIBarButtonItem *voiceBarButton = [[UIBarButtonItem alloc] initWithTitle:@"日期" style:UIBarButtonItemStylePlain target:self action:@selector(showDate)];
-    voiceBarButton.width = ceilf(self.view.frame.size.width) / 3;
-    
-    UIBarButtonItem *saveBarButton = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(save)];
-    voiceBarButton.width = ceilf(self.view.frame.size.width) / 3;
-    
-    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, ScreenW, 50)];
-    toolbar.items = [NSArray arrayWithObjects:doneBarButton, voiceBarButton,saveBarButton, nil];
-    toolbar.backgroundColor=[UIColor redColor];
+    self.view.backgroundColor=[UIColor whiteColor];
     
      CGRect contentTextVF= CGRectMake(kHorizontalMargin, 0, ScreenW-2*kHorizontalMargin, ScreenH);
     _contentTextView = [[UITextView alloc] initWithFrame:contentTextVF];
@@ -76,30 +77,101 @@
     _contentTextView.autocapitalizationType = UITextAutocapitalizationTypeNone;
     [_contentTextView setScrollEnabled:YES];
     [_contentTextView becomeFirstResponder];
-    _contentTextView.inputAccessoryView = toolbar;
-
+    
+    LN_ComposeToolbar *toolbar = [[LN_ComposeToolbar alloc] init];
+    toolbar.width = ScreenW;
+    toolbar.delegate = self;
+    toolbar.height = 44;
+    self.toolbar = toolbar;
+    
+    // 2.显示
+    toolbar.y = ScreenH - toolbar.height;
     [self.view addSubview:_contentTextView];
+    
+    [self.view addSubview:toolbar];
 
 }
 
-- (void)hideKeyboard
+
+- (void)composeTool:(LN_ComposeToolbar *)toolbar didClickedButton:(LN_ComposeToolbarButtonType)buttonType
 {
+    switch (buttonType) {
+        case LN_ComposeToolbarButtonTypeCamera: // 照相机
+//            [self openCamera];
+            break;
+            
+        case LN_ComposeToolbarButtonTypePicture: // 相册
+//            [self openAlbum];
+            break;
+            
+        case LN_ComposeToolbarButtonTypedate: // 日期
+            [self showDate];
+            break;
+
+            
+        case LN_ComposeToolbarButtonTypeCalendar: // 日期
+            [self calendar];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)calendar
+{
+    CalendarHomeViewController *leftVc=[[CalendarHomeViewController alloc]init];
+    [leftVc setAirPlaneToDay:365 ToDateforString:[NSString stringWithFormat:@"%@",[NSDate date]]];
+    leftVc.calendartitle=@"日历";
+    [self presentViewController:leftVc animated:YES completion:NULL];
+    
+    leftVc.calendarblock=^(CalendarDayModel *model,NSDate *date){
+        DLog(@"%@%@",model.date,date);
+    };
 
 }
 
 - (void)showDate
 {
-    WMCustomDatePicker *picker=[[WMCustomDatePicker alloc]initWithframe:CGRectMake(0, 0, ScreenW, 180) PickerStyle:WMDateStyle_MonthDayHourMinute didSelectedDateFinishBack:^(WMCustomDatePicker *picker, NSString *year, NSString *month, NSString *day, NSString *hour, NSString *minute, NSString *weekDay) {
-        DLog(@"%@",month);
-    }];
+    self.changingKeyboard = YES;
+
+    if (_contentTextView.inputView) {
+        
+        _contentTextView.inputView=nil;
+        self.toolbar.showdateButton = YES;
+
+    }else{
+        
+        UIDatePicker *picker=[UIDatePicker new];
+        picker.datePickerMode=UIDatePickerModeTime;
+        [picker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+        picker.backgroundColor=[UIColor whiteColor];
+        _contentTextView.inputView=picker;
+        self.toolbar.showdateButton = NO;
+
+    }
     
-    picker.minLimitDate = [NSDate date];
-    picker.maxLimitDate = [NSDate dateWithTimeIntervalSinceNow:24*60*60*30*12];
-    _contentTextView.inputView=picker;
+    [_contentTextView resignFirstResponder];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [_contentTextView becomeFirstResponder];
+
+    });
 
     
 }
+
+-(void)dateChanged:(UIDatePicker *)picker
+{
+    
+    NSLog(@"%@",picker.date);
+    
+    self.contentTextView.text=[NSString stringWithFormat:@"%@", picker.date];
+    
+}
 static char kUserLocation;
+static char kUserCacheData;
 
 
 - (void)save
@@ -113,6 +185,8 @@ static char kUserLocation;
     
     [LN_DataModel insert:dataM resBlock:^(BOOL res) {
         
+        [self setupAlert];
+
     }];
 }
 
@@ -120,6 +194,76 @@ static char kUserLocation;
 {
         objc_setAssociatedObject(self, &kUserLocation, userLocation, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
+
+#pragma mark - 键盘处理
+/**
+ *  键盘即将隐藏
+ */
+- (void)keyboardWillHide:(NSNotification *)note
+{
+    if (self.isChangingKeyboard) {
+        self.changingKeyboard = NO;
+        return;
+    }
+    
+    // 1.键盘弹出需要的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 2.动画
+    [UIView animateWithDuration:duration animations:^{
+        self.toolbar.transform = CGAffineTransformIdentity;
+    }];
+}
+
+/**
+ *  键盘即将弹出
+ */
+- (void)keyboardWillShow:(NSNotification *)note
+{
+    // 1.键盘弹出需要的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 2.动画
+    [UIView animateWithDuration:duration animations:^{
+        // 取出键盘高度
+        CGRect keyboardF = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        CGFloat keyboardH = keyboardF.size.height;
+        self.toolbar.transform = CGAffineTransformMakeTranslation(0, - keyboardH);
+    }];
+}
+
+-(void)setupAlert
+{
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    
+    //设置通知时间
+    localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    
+    
+    //设置弹出对话框的消息和按钮
+    localNotif.alertBody =@"Alert";
+    localNotif.alertAction = NSLocalizedString(@"OK", nil);
+    
+    
+    //设置声音
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    
+    
+    //设置BadgeNumber
+    localNotif.applicationIconBadgeNumber = 1;
+    
+    
+    //设置附加消息
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:@"Alert" forKey:@"kAlert"];
+    localNotif.userInfo = infoDict;
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    
+}
+
+
 
 
 @end

@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4950AA8B1CE0CED800E2B82F /* CalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA7A1CE0CED800E2B82F /* CalendarDayCell.m */; };
+		4950AA8C1CE0CED800E2B82F /* CalendarDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA7C1CE0CED800E2B82F /* CalendarDayModel.m */; };
+		4950AA8D1CE0CED800E2B82F /* CalendarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA7E1CE0CED800E2B82F /* CalendarHomeViewController.m */; };
+		4950AA8E1CE0CED800E2B82F /* CalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA801CE0CED800E2B82F /* CalendarLogic.m */; };
+		4950AA8F1CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA821CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.m */; };
+		4950AA901CE0CED800E2B82F /* CalendarMonthHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA841CE0CED800E2B82F /* CalendarMonthHeaderView.m */; };
+		4950AA911CE0CED800E2B82F /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA861CE0CED800E2B82F /* CalendarViewController.m */; };
+		4950AA921CE0CED800E2B82F /* chack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4950AA871CE0CED800E2B82F /* chack.png */; };
+		4950AA931CE0CED800E2B82F /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */; };
+		495C4FAC1CDF074E001BAFB8 /* LN_ComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */; };
+		495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */; };
+		495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */; };
+		495C4FBB1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAF1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png */; };
+		495C4FBC1CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB01CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png */; };
+		495C4FBD1CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB11CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png */; };
+		495C4FBE1CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB21CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png */; };
+		495C4FBF1CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB31CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png */; };
+		495C4FC01CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB41CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png */; };
+		495C4FC11CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB51CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png */; };
+		495C4FC21CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB61CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png */; };
+		495C4FC31CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB71CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png */; };
+		495C4FC41CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB81CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png */; };
+		495C4FC61CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */; };
 		498B35AD1CDC770C009E424D /* LN_UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 498B35AC1CDC770C009E424D /* LN_UserLocation.m */; };
 		49F5814E1CD9D5E9005EE541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5814D1CD9D5E9005EE541 /* main.m */; };
 		49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F581501CD9D5E9005EE541 /* AppDelegate.m */; };
@@ -64,9 +87,6 @@
 		49F584211CDB3A26005EE541 /* CoreProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F584071CDB3A26005EE541 /* CoreProperty.m */; };
 		49F584221CDB3A26005EE541 /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F584091CDB3A26005EE541 /* NSObject+Runtime.m */; };
 		49F584251CDB4000005EE541 /* LN_DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F584241CDB4000005EE541 /* LN_DataModel.m */; };
-		49F5842F1CDB5DEA005EE541 /* NSString+DateToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F584291CDB5DEA005EE541 /* NSString+DateToString.m */; };
-		49F584301CDB5DEA005EE541 /* WMCustomDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5842C1CDB5DEA005EE541 /* WMCustomDatePicker.m */; };
-		49F584311CDB5DEA005EE541 /* WMDatepicker_DateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5842E1CDB5DEA005EE541 /* WMDatepicker_DateModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +107,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4950AA791CE0CED800E2B82F /* CalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayCell.h; sourceTree = "<group>"; };
+		4950AA7A1CE0CED800E2B82F /* CalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDayCell.m; sourceTree = "<group>"; };
+		4950AA7B1CE0CED800E2B82F /* CalendarDayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayModel.h; sourceTree = "<group>"; };
+		4950AA7C1CE0CED800E2B82F /* CalendarDayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDayModel.m; sourceTree = "<group>"; };
+		4950AA7D1CE0CED800E2B82F /* CalendarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarHomeViewController.h; sourceTree = "<group>"; };
+		4950AA7E1CE0CED800E2B82F /* CalendarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarHomeViewController.m; sourceTree = "<group>"; };
+		4950AA7F1CE0CED800E2B82F /* CalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarLogic.h; sourceTree = "<group>"; };
+		4950AA801CE0CED800E2B82F /* CalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarLogic.m; sourceTree = "<group>"; };
+		4950AA811CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMonthCollectionViewLayout.h; sourceTree = "<group>"; };
+		4950AA821CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMonthCollectionViewLayout.m; sourceTree = "<group>"; };
+		4950AA831CE0CED800E2B82F /* CalendarMonthHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarMonthHeaderView.h; sourceTree = "<group>"; };
+		4950AA841CE0CED800E2B82F /* CalendarMonthHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarMonthHeaderView.m; sourceTree = "<group>"; };
+		4950AA851CE0CED800E2B82F /* CalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		4950AA861CE0CED800E2B82F /* CalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		4950AA871CE0CED800E2B82F /* chack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chack.png; sourceTree = "<group>"; };
+		4950AA881CE0CED800E2B82F /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		4950AA891CE0CED800E2B82F /* NSDate+WQCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WQCalendarLogic.h"; sourceTree = "<group>"; };
+		4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WQCalendarLogic.m"; sourceTree = "<group>"; };
+		495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_ComposeToolbar.h; sourceTree = "<group>"; };
+		495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_ComposeToolbar.m; sourceTree = "<group>"; };
+		495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_camerabutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_camerabutton_background@2x.png"; sourceTree = "<group>"; };
+		495C4FAF1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emoticonbutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FB01CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_emoticonbutton_background@2x.png"; sourceTree = "<group>"; };
+		495C4FB11CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_keyboardbutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FB21CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_keyboardbutton_background@2x.png"; sourceTree = "<group>"; };
+		495C4FB31CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_mentionbutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FB41CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_mentionbutton_background@2x.png"; sourceTree = "<group>"; };
+		495C4FB51CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_toolbar_picture_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FB61CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_toolbar_picture@2x.png"; sourceTree = "<group>"; };
+		495C4FB71CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_trendbutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
+		495C4FB81CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_trendbutton_background@2x.png"; sourceTree = "<group>"; };
+		495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_toolbar_background@2x.png"; sourceTree = "<group>"; };
 		498B35AB1CDC770C009E424D /* LN_UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_UserLocation.h; sourceTree = "<group>"; };
 		498B35AC1CDC770C009E424D /* LN_UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_UserLocation.m; sourceTree = "<group>"; };
 		49F581491CD9D5E9005EE541 /* LocationNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,12 +241,6 @@
 		49F5840B1CDB3A26005EE541 /* CoreModelType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreModelType.h; sourceTree = "<group>"; };
 		49F584231CDB4000005EE541 /* LN_DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_DataModel.h; sourceTree = "<group>"; };
 		49F584241CDB4000005EE541 /* LN_DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_DataModel.m; sourceTree = "<group>"; };
-		49F584281CDB5DEA005EE541 /* NSString+DateToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DateToString.h"; sourceTree = "<group>"; };
-		49F584291CDB5DEA005EE541 /* NSString+DateToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DateToString.m"; sourceTree = "<group>"; };
-		49F5842B1CDB5DEA005EE541 /* WMCustomDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCustomDatePicker.h; sourceTree = "<group>"; };
-		49F5842C1CDB5DEA005EE541 /* WMCustomDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCustomDatePicker.m; sourceTree = "<group>"; };
-		49F5842D1CDB5DEA005EE541 /* WMDatepicker_DateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMDatepicker_DateModel.h; sourceTree = "<group>"; };
-		49F5842E1CDB5DEA005EE541 /* WMDatepicker_DateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMDatepicker_DateModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +284,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4950AA781CE0CED800E2B82F /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4950AA791CE0CED800E2B82F /* CalendarDayCell.h */,
+				4950AA7A1CE0CED800E2B82F /* CalendarDayCell.m */,
+				4950AA7B1CE0CED800E2B82F /* CalendarDayModel.h */,
+				4950AA7C1CE0CED800E2B82F /* CalendarDayModel.m */,
+				4950AA7D1CE0CED800E2B82F /* CalendarHomeViewController.h */,
+				4950AA7E1CE0CED800E2B82F /* CalendarHomeViewController.m */,
+				4950AA7F1CE0CED800E2B82F /* CalendarLogic.h */,
+				4950AA801CE0CED800E2B82F /* CalendarLogic.m */,
+				4950AA811CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.h */,
+				4950AA821CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.m */,
+				4950AA831CE0CED800E2B82F /* CalendarMonthHeaderView.h */,
+				4950AA841CE0CED800E2B82F /* CalendarMonthHeaderView.m */,
+				4950AA851CE0CED800E2B82F /* CalendarViewController.h */,
+				4950AA861CE0CED800E2B82F /* CalendarViewController.m */,
+				4950AA871CE0CED800E2B82F /* chack.png */,
+				4950AA881CE0CED800E2B82F /* Color.h */,
+				4950AA891CE0CED800E2B82F /* NSDate+WQCalendarLogic.h */,
+				4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		49F581401CD9D5E9005EE541 = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +389,8 @@
 				49F581811CD9E401005EE541 /* LN_MapViewController.mm */,
 				49F583631CDB20B2005EE541 /* LN_NoteDetailController.h */,
 				49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */,
+				495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */,
+				495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */,
 				49F584231CDB4000005EE541 /* LN_DataModel.h */,
 				49F584241CDB4000005EE541 /* LN_DataModel.m */,
 				498B35AB1CDC770C009E424D /* LN_UserLocation.h */,
@@ -328,7 +402,7 @@
 		49F581831CD9E6A0005EE541 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				49F584261CDB5DEA005EE541 /* WMCoustomDatepicker */,
+				4950AA781CE0CED800E2B82F /* Calendar */,
 				49F583C71CDB3A26005EE541 /* CoreModel */,
 				49F583591CDAFDBB005EE541 /* Other */,
 				49F581841CD9E6A0005EE541 /* BMK */,
@@ -376,6 +450,19 @@
 		49F5835B1CDAFDF6005EE541 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */,
+				495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */,
+				495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */,
+				495C4FAF1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png */,
+				495C4FB01CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png */,
+				495C4FB11CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png */,
+				495C4FB21CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png */,
+				495C4FB31CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png */,
+				495C4FB41CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png */,
+				495C4FB51CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png */,
+				495C4FB61CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png */,
+				495C4FB71CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png */,
+				495C4FB81CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png */,
 				49F5835C1CDAFDF6005EE541 /* add@2x.png */,
 				49F5835E1CDAFEDA005EE541 /* location_me@2x.png */,
 				49F583661CDB2D31005EE541 /* nav_back@2x.png */,
@@ -577,35 +664,6 @@
 			path = Type;
 			sourceTree = "<group>";
 		};
-		49F584261CDB5DEA005EE541 /* WMCoustomDatepicker */ = {
-			isa = PBXGroup;
-			children = (
-				49F584271CDB5DEA005EE541 /* categroy */,
-				49F5842A1CDB5DEA005EE541 /* WMCoustomDatepicker */,
-			);
-			path = WMCoustomDatepicker;
-			sourceTree = "<group>";
-		};
-		49F584271CDB5DEA005EE541 /* categroy */ = {
-			isa = PBXGroup;
-			children = (
-				49F584281CDB5DEA005EE541 /* NSString+DateToString.h */,
-				49F584291CDB5DEA005EE541 /* NSString+DateToString.m */,
-			);
-			path = categroy;
-			sourceTree = "<group>";
-		};
-		49F5842A1CDB5DEA005EE541 /* WMCoustomDatepicker */ = {
-			isa = PBXGroup;
-			children = (
-				49F5842B1CDB5DEA005EE541 /* WMCustomDatePicker.h */,
-				49F5842C1CDB5DEA005EE541 /* WMCustomDatePicker.m */,
-				49F5842D1CDB5DEA005EE541 /* WMDatepicker_DateModel.h */,
-				49F5842E1CDB5DEA005EE541 /* WMDatepicker_DateModel.m */,
-			);
-			path = WMCoustomDatepicker;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -710,13 +768,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */,
+				495C4FC21CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png in Resources */,
 				49F5815C1CD9D5E9005EE541 /* LaunchScreen.storyboard in Resources */,
+				4950AA921CE0CED800E2B82F /* chack.png in Resources */,
+				495C4FC61CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png in Resources */,
 				49F5835D1CDAFDF6005EE541 /* add@2x.png in Resources */,
 				49F581AC1CD9F463005EE541 /* mapapi.bundle in Resources */,
+				495C4FC41CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png in Resources */,
+				495C4FC01CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png in Resources */,
+				495C4FBF1CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png in Resources */,
 				49F581591CD9D5E9005EE541 /* Assets.xcassets in Resources */,
+				495C4FBB1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png in Resources */,
+				495C4FC31CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png in Resources */,
+				495C4FBD1CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png in Resources */,
+				495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */,
+				495C4FC11CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png in Resources */,
 				49F583671CDB2D31005EE541 /* nav_back@2x.png in Resources */,
 				49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */,
 				49F5835F1CDAFEDA005EE541 /* location_me@2x.png in Resources */,
+				495C4FBE1CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png in Resources */,
+				495C4FBC1CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,13 +814,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F5840C1CDB3A26005EE541 /* CoreModel.m in Sources */,
-				49F584311CDB5DEA005EE541 /* WMDatepicker_DateModel.m in Sources */,
 				49F5840D1CDB3A26005EE541 /* CoreFMDB.m in Sources */,
 				49F5841F1CDB3A26005EE541 /* NSString+Stackoverflow.m in Sources */,
 				49F584171CDB3A26005EE541 /* NSObject+CoreModelCommon.m in Sources */,
 				49F5841B1CDB3A26005EE541 /* NSObject+Save.m in Sources */,
 				49F5841D1CDB3A26005EE541 /* NSObject+Update.m in Sources */,
-				49F584301CDB5DEA005EE541 /* WMCustomDatePicker.m in Sources */,
 				49F584111CDB3A26005EE541 /* FMDatabasePool.m in Sources */,
 				49F584141CDB3A26005EE541 /* NSArray+CoreModel.m in Sources */,
 				49F584151CDB3A26005EE541 /* NSDictionary+Sqlite.m in Sources */,
@@ -756,15 +826,23 @@
 				49F584121CDB3A26005EE541 /* FMDatabaseQueue.m in Sources */,
 				49F583651CDB20B2005EE541 /* LN_NoteDetailController.m in Sources */,
 				49F583621CDB0040005EE541 /* UIView+Extension.m in Sources */,
-				49F5842F1CDB5DEA005EE541 /* NSString+DateToString.m in Sources */,
+				495C4FAC1CDF074E001BAFB8 /* LN_ComposeToolbar.m in Sources */,
 				49F584251CDB4000005EE541 /* LN_DataModel.m in Sources */,
 				49F584211CDB3A26005EE541 /* CoreProperty.m in Sources */,
+				4950AA931CE0CED800E2B82F /* NSDate+WQCalendarLogic.m in Sources */,
+				4950AA8C1CE0CED800E2B82F /* CalendarDayModel.m in Sources */,
+				4950AA8D1CE0CED800E2B82F /* CalendarHomeViewController.m in Sources */,
 				49F581961CD9E6A0005EE541 /* BMKTool.m in Sources */,
 				49F5836A1CDB32A6005EE541 /* arkConst.m in Sources */,
+				4950AA8B1CE0CED800E2B82F /* CalendarDayCell.m in Sources */,
+				4950AA8F1CE0CED800E2B82F /* CalendarMonthCollectionViewLayout.m in Sources */,
+				4950AA901CE0CED800E2B82F /* CalendarMonthHeaderView.m in Sources */,
 				49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */,
+				4950AA8E1CE0CED800E2B82F /* CalendarLogic.m in Sources */,
 				49F584131CDB3A26005EE541 /* FMResultSet.m in Sources */,
 				49F5841C1CDB3A26005EE541 /* NSObject+Select.m in Sources */,
 				49F5840E1CDB3A26005EE541 /* NSString+CoreFMDB.m in Sources */,
+				4950AA911CE0CED800E2B82F /* CalendarViewController.m in Sources */,
 				49F5841E1CDB3A26005EE541 /* NSOperationQueue+Queue.m in Sources */,
 				49F581821CD9E401005EE541 /* LN_MapViewController.mm in Sources */,
 				49F584181CDB3A26005EE541 /* NSObject+Create.m in Sources */,
