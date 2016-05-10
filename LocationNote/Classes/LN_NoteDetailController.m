@@ -104,14 +104,17 @@
 //            [self openAlbum];
             break;
             
-        case LN_ComposeToolbarButtonTypedate: // 日期
-            [self showDate];
+//        case LN_ComposeToolbarButtonTypedate: // 日期
+//            [self showDate];
             break;
 
             
         case LN_ComposeToolbarButtonTypeCalendar: // 日期
             [self calendar];
             break;
+            
+        case LN_ComposeToolbarButtonTypeSave: //保存
+            [self save];
             
         default:
             break;
@@ -123,55 +126,53 @@
     CalendarHomeViewController *leftVc=[[CalendarHomeViewController alloc]init];
     [leftVc setAirPlaneToDay:365 ToDateforString:[NSString stringWithFormat:@"%@",[NSDate date]]];
     leftVc.calendartitle=@"日历";
+    [leftVc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+
     [self presentViewController:leftVc animated:YES completion:NULL];
     
     leftVc.calendarblock=^(CalendarDayModel *model,NSDate *date){
         DLog(@"%@%@",model.date,date);
+        
+//        objc_setAssociatedObject(self, &kUserAlertTime, , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        
     };
 
 }
 
-- (void)showDate
-{
-    self.changingKeyboard = YES;
+//- (void)showDate
+//{
+//    self.changingKeyboard = YES;
+//
+//    if (_contentTextView.inputView) {
+//        
+//        _contentTextView.inputView=nil;
+//        self.toolbar.showdateButton = YES;
+//
+//    }else{
+//        
+//        UIDatePicker *picker=[UIDatePicker new];
+//        picker.datePickerMode=UIDatePickerModeTime;
+//        [picker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
+//        picker.backgroundColor=[UIColor whiteColor];
+//        _contentTextView.inputView=picker;
+//        self.toolbar.showdateButton = NO;
+//
+//    }
+//    
+//    [_contentTextView resignFirstResponder];
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        
+//        [_contentTextView becomeFirstResponder];
+//
+//    });
+//
+//    
+//}
 
-    if (_contentTextView.inputView) {
-        
-        _contentTextView.inputView=nil;
-        self.toolbar.showdateButton = YES;
-
-    }else{
-        
-        UIDatePicker *picker=[UIDatePicker new];
-        picker.datePickerMode=UIDatePickerModeTime;
-        [picker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
-        picker.backgroundColor=[UIColor whiteColor];
-        _contentTextView.inputView=picker;
-        self.toolbar.showdateButton = NO;
-
-    }
-    
-    [_contentTextView resignFirstResponder];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        [_contentTextView becomeFirstResponder];
-
-    });
-
-    
-}
-
--(void)dateChanged:(UIDatePicker *)picker
-{
-    
-    NSLog(@"%@",picker.date);
-    
-    self.contentTextView.text=[NSString stringWithFormat:@"%@", picker.date];
-    
-}
 static char kUserLocation;
 static char kUserCacheData;
+static char kUserAlertTime;
 
 
 - (void)save
@@ -180,12 +181,20 @@ static char kUserCacheData;
     LN_DataModel *dataM=[LN_DataModel new];
     dataM.currentPosition=[NSString stringWithFormat:@"%f|%f", userLocation.location.coordinate.latitude ,userLocation.location.coordinate.longitude];
 //    dataM.hostID =arc4random() ;
-    dataM.saveTime=[NSString stringWithFormat:@"%@",[NSDate date]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
+    dataM.saveTime=strDate;
     dataM.content=self.contentTextView.text;
     
     [LN_DataModel insert:dataM resBlock:^(BOOL res) {
         
+        objc_setAssociatedObject(self, &kUserCacheData, dataM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
         [self setupAlert];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
 
     }];
 }
@@ -235,15 +244,24 @@ static char kUserCacheData;
 
 -(void)setupAlert
 {
+    LN_DataModel *dataM=objc_getAssociatedObject(self, &kUserCacheData);
+    
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
     
     //设置通知时间
-    localNotif.fireDate = [NSDate dateWithTimeIntervalSinceNow:20];
+    NSTimeInterval  intervalPlus =31; //1:天数
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *dateFormStr = [dateFormatter dateFromString:dataM.saveTime];
+    NSDate *datePlus = [[NSDate alloc] initWithTimeInterval:intervalPlus sinceDate:dateFormStr];
+
+    localNotif.fireDate =datePlus;
     localNotif.timeZone = [NSTimeZone defaultTimeZone];
     
     
     //设置弹出对话框的消息和按钮
-    localNotif.alertBody =@"Alert";
+    localNotif.alertBody =dataM.content;
     localNotif.alertAction = NSLocalizedString(@"OK", nil);
     
     

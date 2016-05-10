@@ -12,6 +12,7 @@
 #import "LN_NoteDetailController.h"
 #import "LN_DataModel.h"
 #import "LN_UserLocation.h"
+#import "LN_NoteListController.h"
 
 @interface LN_MapViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 
@@ -33,21 +34,28 @@
 {
     self.title=kAppName;
     
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+
+    _mapView=[[BMKMapView alloc]init];
+    _mapView.delegate = self;
+    _mapView.frame = self.view.bounds;
+    [self.view addSubview:_mapView];
+    
     UIButton *locme=[UIButton new];
     locme.frame=CGRectMake(40, ScreenH-kTopBarHeight-80, 40, 40);
     [locme setBackgroundImage:[UIImage imageNamed:@"location_me"] forState:0];
     [locme addTarget:self action:@selector(locme:) forControlEvents:UIControlEventTouchUpInside];
-    _mapView=[[BMKMapView alloc]init];
-    _mapView.delegate = self;
-    _mapView.frame = CGRectMake(0, 0, ScreenW, ScreenH-kTopBarHeight);
-    [self.view addSubview:_mapView];
+    [self.mapView addSubview:locme];
+    
+    UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithTitle:@"列表" style:UIBarButtonItemStylePlain target:self action:@selector(changeViewModel)];
+    self.navigationItem.rightBarButtonItem=barBtn;
     
     UIButton *plusBtn=[UIButton new];
-    plusBtn.frame=CGRectMake((ScreenW-ScreenW*0.8)*0.5, MaxY(_mapView),ScreenW *0.8, ScreenH-_mapView.height);
+    plusBtn.frame=CGRectMake((ScreenW-ScreenW*0.8)*0.5,ScreenH-44,ScreenW *0.8, 44);
     plusBtn.backgroundColor=[UIColor lightGrayColor];
     [plusBtn addTarget:self action:@selector(createNote) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:plusBtn];
-    [self.view insertSubview:locme aboveSubview:plusBtn];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:plusBtn];
 
     _locService=[[BMKLocationService alloc] init];
     _locService.delegate = self;
@@ -135,4 +143,11 @@
 
 }
 
+- (void)changeViewModel
+{
+    LN_NoteListController *noteList=[LN_NoteListController new];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:noteList];
+    [nav setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 @end

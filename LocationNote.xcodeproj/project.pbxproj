@@ -16,6 +16,7 @@
 		4950AA911CE0CED800E2B82F /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA861CE0CED800E2B82F /* CalendarViewController.m */; };
 		4950AA921CE0CED800E2B82F /* chack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4950AA871CE0CED800E2B82F /* chack.png */; };
 		4950AA931CE0CED800E2B82F /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */; };
+		4950AA961CE16ABE00E2B82F /* LN_NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */; };
 		495C4FAC1CDF074E001BAFB8 /* LN_ComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */; };
 		495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */; };
 		495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */; };
@@ -125,6 +126,8 @@
 		4950AA881CE0CED800E2B82F /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		4950AA891CE0CED800E2B82F /* NSDate+WQCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WQCalendarLogic.h"; sourceTree = "<group>"; };
 		4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WQCalendarLogic.m"; sourceTree = "<group>"; };
+		4950AA941CE16ABE00E2B82F /* LN_NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_NoteListController.h; sourceTree = "<group>"; };
+		4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_NoteListController.m; sourceTree = "<group>"; };
 		495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_ComposeToolbar.h; sourceTree = "<group>"; };
 		495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_ComposeToolbar.m; sourceTree = "<group>"; };
 		495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_camerabutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
@@ -389,6 +392,8 @@
 				49F581811CD9E401005EE541 /* LN_MapViewController.mm */,
 				49F583631CDB20B2005EE541 /* LN_NoteDetailController.h */,
 				49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */,
+				4950AA941CE16ABE00E2B82F /* LN_NoteListController.h */,
+				4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */,
 				495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */,
 				495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */,
 				49F584231CDB4000005EE541 /* LN_DataModel.h */,
@@ -840,6 +845,7 @@
 				49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */,
 				4950AA8E1CE0CED800E2B82F /* CalendarLogic.m in Sources */,
 				49F584131CDB3A26005EE541 /* FMResultSet.m in Sources */,
+				4950AA961CE16ABE00E2B82F /* LN_NoteListController.m in Sources */,
 				49F5841C1CDB3A26005EE541 /* NSObject+Select.m in Sources */,
 				49F5840E1CDB3A26005EE541 /* NSString+CoreFMDB.m in Sources */,
 				4950AA911CE0CED800E2B82F /* CalendarViewController.m in Sources */,

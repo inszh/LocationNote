@@ -12,7 +12,7 @@ typedef enum {
     LN_ComposeToolbarButtonTypeCamera, // 照相机
     LN_ComposeToolbarButtonTypePicture, // 相册
     LN_ComposeToolbarButtonTypeCalendar, // 日历
-    LN_ComposeToolbarButtonTypeTrend, // 话题
+    LN_ComposeToolbarButtonTypeSave, // 话题
     LN_ComposeToolbarButtonTypedate // 日期
 } LN_ComposeToolbarButtonType;
 
