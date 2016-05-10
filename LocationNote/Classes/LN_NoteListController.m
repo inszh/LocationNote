@@ -11,8 +11,9 @@
 #import "LN_NoteListCell.h"
 #import "UIView+Extension.h"
 #import "LN_NoteDetailController.h"
+#import "LN_CreatBtn.h"
 
-@interface LN_NoteListController ()
+@interface LN_NoteListController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)NSMutableArray * dataArray;
 
@@ -23,11 +24,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     
     UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(changeViewModel)];
     self.navigationItem.rightBarButtonItem=barBtn;
-    
-    
+
+    [LN_CreatBtn creatBtnWithVC:self.view];
+
 }
 
 

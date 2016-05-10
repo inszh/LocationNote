@@ -13,6 +13,7 @@
 #import "LN_ComposeToolbar.h"
 #import "UIView+Extension.h"
 #import "CalendarHomeViewController.h"
+#import "LN_MapSearchViewController.h"
 
 
 @interface LN_NoteDetailController ()<BMKLocationServiceDelegate,LN_ComposeToolbarDelegate>
@@ -108,17 +109,17 @@
 //            [self openAlbum];
             break;
             
-//        case LN_ComposeToolbarButtonTypedate: // 日期
-//            [self showDate];
-            break;
-
-            
-        case LN_ComposeToolbarButtonTypeCalendar: // 日期
+        case LN_ComposeToolbarButtonTypeCalendar: //提醒
             [self calendar];
             break;
             
         case LN_ComposeToolbarButtonTypeSave: //保存
             [self save];
+            
+        case LN_ComposeToolbarButtonTypeMap: // 位置
+            [self searchMap];
+            break;
+
             
         default:
             break;
@@ -129,9 +130,6 @@
 {
     CalendarHomeViewController *leftVc=[[CalendarHomeViewController alloc]init];
     [leftVc setAirPlaneToDay:365 ToDateforString:[NSString stringWithFormat:@"%@",[NSDate date]]];
-    leftVc.calendartitle=@"日历";
-    [leftVc setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
-
     [self presentViewController:leftVc animated:YES completion:NULL];
     
     leftVc.calendarblock=^(CalendarDayModel *model){//日期
@@ -202,6 +200,13 @@ static char kUserAlertTime;
         [self dismissViewControllerAnimated:YES completion:nil];
 
     }];
+}
+
+- (void)searchMap
+{
+    LN_MapSearchViewController *map=[[LN_MapSearchViewController alloc]init];
+    [self presentViewController:map animated:YES completion:nil];
+
 }
 
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation

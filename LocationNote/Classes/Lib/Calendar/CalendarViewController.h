@@ -18,7 +18,6 @@ typedef void (^CalendarBlock)(CalendarDayModel *model);
 
 typedef void (^PickerDateBlock)(NSDate *date);
 
-
 @interface CalendarViewController : UIViewController
 
 @property(nonatomic ,strong) UICollectionView* collectionView;//网格视图
@@ -30,6 +29,5 @@ typedef void (^PickerDateBlock)(NSDate *date);
 @property (nonatomic, copy) CalendarBlock calendarblock;//回调
 
 @property (nonatomic, copy) PickerDateBlock pickerDateblock;//回调
-
 
 @end

@@ -24,7 +24,7 @@
 @end
 
 
-#define CATDayLabelWidth   kAPPFRAMEWIDTH/7
+#define CATDayLabelWidth   ScreenW/7
 #define CATDayLabelHeight 20.0f
 
 @implementation CalendarMonthHeaderView
@@ -65,12 +65,12 @@
     self.masterLabel.textColor = COLOR_THEME;
     [self addSubview:self.masterLabel];
     
-    CGFloat xOffset =ScreenW;
+    CGFloat xOffset =CATDayLabelWidth;
     CGFloat yOffset = 45.0f;
     
     for (int i=0; i<7; i++)
     {
-        UILabel *dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset*i,yOffset, ScreenW/i, 20)];
+        UILabel *dayOfTheWeekLabel = [[UILabel alloc]initWithFrame:CGRectMake(xOffset*i,yOffset, CATDayLabelWidth, CATDayLabelHeight)];
         [dayOfTheWeekLabel setBackgroundColor:[UIColor clearColor]];
         [dayOfTheWeekLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f]];
         dayOfTheWeekLabel = dayOfTheWeekLabel;

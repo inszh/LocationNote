@@ -77,7 +77,6 @@
     super.calendarMonth = [self getMonthArrayOfDayNumber:daynumber ToDateforString:todate];
     [super.collectionView reloadData];//刷新
     
-    
     UIButton *btn=[UIButton buttonWithType:0];
     btn.frame=CGRectMake(ScreenW-60, ScreenH-210, 60, 40);
     [btn setTitle:@"返回" forState:0];
@@ -93,7 +92,7 @@
     picker.backgroundColor=LHNewGrayGroundColor;
     picker.frame=CGRectMake(0, ScreenH-150, ScreenW, 150);
     [self.view addSubview:picker];
-
+    
 }
 
 -(void)dateChanged:(UIDatePicker *)picker
@@ -105,6 +104,9 @@
     }
     
 }
+
+
+
 
 #pragma mark - 逻辑代码初始化
 

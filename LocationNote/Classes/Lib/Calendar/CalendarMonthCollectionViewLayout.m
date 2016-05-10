@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         
-        self.headerReferenceSize = CGSizeMake(ScreenH, 65.0f);//头部视图的框架大小
+        self.headerReferenceSize = CGSizeMake(ScreenW, 65.0f);//头部视图的框架大小
         
         self.itemSize = CGSizeMake(ScreenW/7, 70.0f);//每个cell的大小
         

@@ -20,4 +20,8 @@
 
 - (void)setAirPlaneToDay:(int)day ToDateforString:(NSString *)todate;//飞机初始化方法
 
+- (void)setHotelToDay:(int)day ToDateforString:(NSString *)todate;//酒店初始化方法
+
+- (void)setTrainToDay:(int)day ToDateforString:(NSString *)todate;//火车初始化方法
+
 @end

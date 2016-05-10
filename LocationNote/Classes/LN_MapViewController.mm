@@ -13,7 +13,7 @@
 #import "LN_DataModel.h"
 #import "LN_UserLocation.h"
 #import "LN_NoteListController.h"
-
+#import "LN_CreatBtn.h"
 @interface LN_MapViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 
 @property(nonatomic,strong)BMKMapView * mapView;
@@ -42,10 +42,12 @@
     [self.view addSubview:_mapView];
     
     UIButton *locme=[UIButton new];
-    locme.frame=CGRectMake(40, ScreenH-kTopBarHeight-80, 40, 40);
+    locme.frame=CGRectMake(20, ScreenH-kTopBarHeight-40, 40, 40);
     [locme setBackgroundImage:[UIImage imageNamed:@"location_me"] forState:0];
     [locme addTarget:self action:@selector(locme:) forControlEvents:UIControlEventTouchUpInside];
     [self.mapView addSubview:locme];
+    
+    [LN_CreatBtn creatBtnWithVC:self.view];
     
     UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithTitle:@"列表" style:UIBarButtonItemStylePlain target:self action:@selector(changeViewModel)];
     self.navigationItem.rightBarButtonItem=barBtn;
@@ -120,12 +122,7 @@
     [_locService startUserLocationService];
 }
 
-- (void)createNote
-{
-    LN_NoteDetailController *note=[LN_NoteDetailController new];
-    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:note];
-    [self presentViewController:nav animated:YES completion:nil];
-}
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
