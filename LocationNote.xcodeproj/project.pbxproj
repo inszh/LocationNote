@@ -17,6 +17,7 @@
 		4950AA921CE0CED800E2B82F /* chack.png in Resources */ = {isa = PBXBuildFile; fileRef = 4950AA871CE0CED800E2B82F /* chack.png */; };
 		4950AA931CE0CED800E2B82F /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */; };
 		4950AA961CE16ABE00E2B82F /* LN_NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */; };
+		4950AA991CE1906F00E2B82F /* LN_NoteListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4950AA981CE1906F00E2B82F /* LN_NoteListCell.m */; };
 		495C4FAC1CDF074E001BAFB8 /* LN_ComposeToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */; };
 		495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */; };
 		495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */; };
@@ -32,6 +33,9 @@
 		495C4FC41CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FB81CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png */; };
 		495C4FC61CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */; };
 		498B35AD1CDC770C009E424D /* LN_UserLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 498B35AC1CDC770C009E424D /* LN_UserLocation.m */; };
+		499E23631CE1969E005BEAD7 /* AxisStd-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 499E23601CE1969E005BEAD7 /* AxisStd-ExtraLight.otf */; };
+		499E23641CE1969E005BEAD7 /* AxisStd-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 499E23611CE1969E005BEAD7 /* AxisStd-Light.otf */; };
+		499E23651CE1969E005BEAD7 /* AxisStd-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 499E23621CE1969E005BEAD7 /* AxisStd-UltraLight.otf */; };
 		49F5814E1CD9D5E9005EE541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5814D1CD9D5E9005EE541 /* main.m */; };
 		49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F581501CD9D5E9005EE541 /* AppDelegate.m */; };
 		49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F581551CD9D5E9005EE541 /* Main.storyboard */; };
@@ -128,6 +132,8 @@
 		4950AA8A1CE0CED800E2B82F /* NSDate+WQCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WQCalendarLogic.m"; sourceTree = "<group>"; };
 		4950AA941CE16ABE00E2B82F /* LN_NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_NoteListController.h; sourceTree = "<group>"; };
 		4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_NoteListController.m; sourceTree = "<group>"; };
+		4950AA971CE1906F00E2B82F /* LN_NoteListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_NoteListCell.h; sourceTree = "<group>"; };
+		4950AA981CE1906F00E2B82F /* LN_NoteListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_NoteListCell.m; sourceTree = "<group>"; };
 		495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_ComposeToolbar.h; sourceTree = "<group>"; };
 		495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_ComposeToolbar.m; sourceTree = "<group>"; };
 		495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_camerabutton_background_highlighted@2x.png"; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 		495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compose_toolbar_background@2x.png"; sourceTree = "<group>"; };
 		498B35AB1CDC770C009E424D /* LN_UserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_UserLocation.h; sourceTree = "<group>"; };
 		498B35AC1CDC770C009E424D /* LN_UserLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_UserLocation.m; sourceTree = "<group>"; };
+		499E23601CE1969E005BEAD7 /* AxisStd-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-ExtraLight.otf"; sourceTree = "<group>"; };
+		499E23611CE1969E005BEAD7 /* AxisStd-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-Light.otf"; sourceTree = "<group>"; };
+		499E23621CE1969E005BEAD7 /* AxisStd-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AxisStd-UltraLight.otf"; sourceTree = "<group>"; };
 		49F581491CD9D5E9005EE541 /* LocationNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F5814D1CD9D5E9005EE541 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49F5814F1CD9D5E9005EE541 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -312,6 +321,16 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		499E235F1CE1969E005BEAD7 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				499E23601CE1969E005BEAD7 /* AxisStd-ExtraLight.otf */,
+				499E23611CE1969E005BEAD7 /* AxisStd-Light.otf */,
+				499E23621CE1969E005BEAD7 /* AxisStd-UltraLight.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		49F581401CD9D5E9005EE541 = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +413,8 @@
 				49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */,
 				4950AA941CE16ABE00E2B82F /* LN_NoteListController.h */,
 				4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */,
+				4950AA971CE1906F00E2B82F /* LN_NoteListCell.h */,
+				4950AA981CE1906F00E2B82F /* LN_NoteListCell.m */,
 				495C4FAA1CDF074E001BAFB8 /* LN_ComposeToolbar.h */,
 				495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */,
 				49F584231CDB4000005EE541 /* LN_DataModel.h */,
@@ -455,6 +476,7 @@
 		49F5835B1CDAFDF6005EE541 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				499E235F1CE1969E005BEAD7 /* font */,
 				495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */,
 				495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */,
 				495C4FAE1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png */,
@@ -773,8 +795,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499E23641CE1969E005BEAD7 /* AxisStd-Light.otf in Resources */,
 				495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */,
 				495C4FC21CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png in Resources */,
+				499E23631CE1969E005BEAD7 /* AxisStd-ExtraLight.otf in Resources */,
 				49F5815C1CD9D5E9005EE541 /* LaunchScreen.storyboard in Resources */,
 				4950AA921CE0CED800E2B82F /* chack.png in Resources */,
 				495C4FC61CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png in Resources */,
@@ -789,6 +813,7 @@
 				495C4FBD1CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png in Resources */,
 				495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */,
 				495C4FC11CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png in Resources */,
+				499E23651CE1969E005BEAD7 /* AxisStd-UltraLight.otf in Resources */,
 				49F583671CDB2D31005EE541 /* nav_back@2x.png in Resources */,
 				49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */,
 				49F5835F1CDAFEDA005EE541 /* location_me@2x.png in Resources */,
@@ -824,6 +849,7 @@
 				49F584171CDB3A26005EE541 /* NSObject+CoreModelCommon.m in Sources */,
 				49F5841B1CDB3A26005EE541 /* NSObject+Save.m in Sources */,
 				49F5841D1CDB3A26005EE541 /* NSObject+Update.m in Sources */,
+				4950AA991CE1906F00E2B82F /* LN_NoteListCell.m in Sources */,
 				49F584111CDB3A26005EE541 /* FMDatabasePool.m in Sources */,
 				49F584141CDB3A26005EE541 /* NSArray+CoreModel.m in Sources */,
 				49F584151CDB3A26005EE541 /* NSDictionary+Sqlite.m in Sources */,

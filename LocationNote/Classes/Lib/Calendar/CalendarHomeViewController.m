@@ -99,9 +99,9 @@
 -(void)dateChanged:(UIDatePicker *)picker
 {
     
-    if (self.calendarblock) {
+    if (self.pickerDateblock) {
         
-        self.calendarblock(nil,picker.date);//传递数组给上级
+        self.pickerDateblock(picker.date);//传递数组给上级
     }
     
 }

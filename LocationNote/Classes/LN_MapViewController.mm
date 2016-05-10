@@ -50,18 +50,9 @@
     UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithTitle:@"列表" style:UIBarButtonItemStylePlain target:self action:@selector(changeViewModel)];
     self.navigationItem.rightBarButtonItem=barBtn;
     
-    UIButton *plusBtn=[UIButton new];
-    plusBtn.frame=CGRectMake((ScreenW-ScreenW*0.8)*0.5,ScreenH-44,ScreenW *0.8, 44);
-    plusBtn.backgroundColor=[UIColor lightGrayColor];
-    [plusBtn addTarget:self action:@selector(createNote) forControlEvents:UIControlEventTouchUpInside];
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:plusBtn];
-
     _locService=[[BMKLocationService alloc] init];
     _locService.delegate = self;
-
     [_locService startUserLocationService];
-
     _mapView.showsUserLocation = NO;//先关闭显示的定位图层
     _mapView.userTrackingMode = BMKUserTrackingModeNone;//设置定位的状态
     _mapView.showsUserLocation = YES;//显示定位图层
@@ -122,6 +113,7 @@
     [_locService stopUserLocationService];
 
 }
+
 
 - (void)locme:(UIButton *)btn
 {

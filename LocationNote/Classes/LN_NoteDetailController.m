@@ -14,12 +14,15 @@
 #import "UIView+Extension.h"
 #import "CalendarHomeViewController.h"
 
+
 @interface LN_NoteDetailController ()<BMKLocationServiceDelegate,LN_ComposeToolbarDelegate>
 
 @property(nonatomic,strong)UITextView * contentTextView;
 @property(nonatomic,strong)BMKLocationService * locService;
 @property(nonatomic,assign)int hotid;
 @property(nonatomic,weak)LN_ComposeToolbar * toolbar;
+@property(nonatomic,copy)NSString *dateStr;
+@property(nonatomic,copy)NSString *timeStr;
 @property (nonatomic, assign, getter = isChangingKeyboard) BOOL changingKeyboard;
 
 
@@ -49,6 +52,7 @@
     
     
 }
+
 
 - (void)pop
 {
@@ -89,7 +93,7 @@
     [self.view addSubview:_contentTextView];
     
     [self.view addSubview:toolbar];
-
+    
 }
 
 
@@ -130,45 +134,29 @@
 
     [self presentViewController:leftVc animated:YES completion:NULL];
     
-    leftVc.calendarblock=^(CalendarDayModel *model,NSDate *date){
-        DLog(@"%@%@",model.date,date);
-        
-//        objc_setAssociatedObject(self, &kUserAlertTime, , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        
+    leftVc.calendarblock=^(CalendarDayModel *model){//日期
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+        NSString *strDate = [dateFormatter stringFromDate:model.date];
+        self.dateStr=strDate;
+        DLog(@"%@",self.dateStr);
+
     };
+    
+    leftVc.pickerDateblock=^(NSDate *date){//时间
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm:ss"];
+        NSString *strDate = [dateFormatter stringFromDate:date];
+        self.timeStr=strDate;
+        DLog(@"%@",self.timeStr);
+
+    };
+    
+    //      objc_setAssociatedObject(self, &kUserAlertTime, , OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
 
 }
 
-//- (void)showDate
-//{
-//    self.changingKeyboard = YES;
-//
-//    if (_contentTextView.inputView) {
-//        
-//        _contentTextView.inputView=nil;
-//        self.toolbar.showdateButton = YES;
-//
-//    }else{
-//        
-//        UIDatePicker *picker=[UIDatePicker new];
-//        picker.datePickerMode=UIDatePickerModeTime;
-//        [picker addTarget:self action:@selector(dateChanged:) forControlEvents:UIControlEventValueChanged];
-//        picker.backgroundColor=[UIColor whiteColor];
-//        _contentTextView.inputView=picker;
-//        self.toolbar.showdateButton = NO;
-//
-//    }
-//    
-//    [_contentTextView resignFirstResponder];
-//    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        
-//        [_contentTextView becomeFirstResponder];
-//
-//    });
-//
-//    
-//}
 
 static char kUserLocation;
 static char kUserCacheData;
@@ -183,11 +171,28 @@ static char kUserAlertTime;
 //    dataM.hostID =arc4random() ;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy MM dd|HH:mm:ss"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
     dataM.saveTime=strDate;
     dataM.content=self.contentTextView.text;
     
+    NSDateFormatter *dateFormatterHH = [[NSDateFormatter alloc] init];
+    [dateFormatterHH setDateFormat:@"HH:mm:ss"];
+    NSString *HHDate = [dateFormatterHH stringFromDate:[NSDate date]];
+    
+    NSDateFormatter *dateFormatterYY = [[NSDateFormatter alloc] init];
+    [dateFormatterYY setDateFormat:@"yyyy-MM-dd"];
+    NSString *YYDate = [dateFormatterYY stringFromDate:[NSDate date]];
+    
+    NSString *fireDateStr;
+    if (!self.timeStr) {
+        fireDateStr=[NSString stringWithFormat:@"%@ %@",self.dateStr,HHDate];
+    }else if (!self.dateStr){
+        fireDateStr=[NSString stringWithFormat:@"%@ %@",YYDate,self.timeStr];
+    }
+    DLog(@"%@",fireDateStr);
+    
+    dataM.alertTime=fireDateStr;
     [LN_DataModel insert:dataM resBlock:^(BOOL res) {
         
         objc_setAssociatedObject(self, &kUserCacheData, dataM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -249,15 +254,12 @@ static char kUserAlertTime;
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
     
     //设置通知时间
-    NSTimeInterval  intervalPlus =31; //1:天数
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *dateFormStr = [dateFormatter dateFromString:dataM.saveTime];
-    NSDate *datePlus = [[NSDate alloc] initWithTimeInterval:intervalPlus sinceDate:dateFormStr];
-
-    localNotif.fireDate =datePlus;
-    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    NSDate *dateFormStr = [dateFormatter dateFromString:dataM.alertTime];
+    
+    localNotif.timeZone = [NSTimeZone localTimeZone];
+    localNotif.fireDate =dateFormStr;
     
     
     //设置弹出对话框的消息和按钮

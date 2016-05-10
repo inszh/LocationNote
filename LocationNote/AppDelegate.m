@@ -8,18 +8,33 @@
 
 #import "AppDelegate.h"
 #import "BMKTool.h"
+#import <EventKit/EventKit.h>
 
 @interface AppDelegate ()<BMKGeneralDelegate>
 
 @property(nonatomic,strong)BMKMapManager* mapManager;
+@property (nonatomic, strong) EKEventStore *eventStore;
 
 @end
 
 @implementation AppDelegate
 
 
+
+- (EKEventStore *)eventStore {
+    if (!_eventStore) {
+        _eventStore = [[EKEventStore alloc] init];
+    }
+    return _eventStore;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [self.eventStore requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        // handle access here
+    }];
     
     [self startLoctaion];
     

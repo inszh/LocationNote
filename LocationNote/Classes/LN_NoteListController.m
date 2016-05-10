@@ -8,6 +8,10 @@
 
 #import "LN_NoteListController.h"
 #import "LN_DataModel.h"
+#import "LN_NoteListCell.h"
+#import "UIView+Extension.h"
+#import "LN_NoteDetailController.h"
+
 @interface LN_NoteListController ()
 
 @property(nonatomic,strong)NSMutableArray * dataArray;
@@ -61,12 +65,43 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-    LN_DataModel *dataM=self.dataArray[indexPath.row];
-    cell.textLabel.text=dataM.content;
-    cell.detailTextLabel.text=dataM.saveTime;
+    LN_NoteListCell *cell = [LN_NoteListCell cellWithTable:tableView];
+    cell.dataM=self.dataArray[indexPath.row];
     return cell;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LN_NoteListCell *cell = (LN_NoteListCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];;
+
+    return cell.height;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if (UITableViewCellEditingStyleDelete)
+    {
+        [self.dataArray removeObject:self.dataArray[indexPath.row]];
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LN_NoteDetailController *noteDetail=[LN_NoteDetailController new];
+    [self.navigationController pushViewController:noteDetail animated:YES];
+}
+
 
 - (void)changeViewModel
 {

@@ -14,7 +14,10 @@
 #import "CalendarLogic.h"
 
 //回掉代码块
-typedef void (^CalendarBlock)(CalendarDayModel *model ,NSDate *date);
+typedef void (^CalendarBlock)(CalendarDayModel *model);
+
+typedef void (^PickerDateBlock)(NSDate *date);
+
 
 @interface CalendarViewController : UIViewController
 
@@ -25,5 +28,8 @@ typedef void (^CalendarBlock)(CalendarDayModel *model ,NSDate *date);
 @property(nonatomic ,strong) CalendarLogic *Logic;
 
 @property (nonatomic, copy) CalendarBlock calendarblock;//回调
+
+@property (nonatomic, copy) PickerDateBlock pickerDateblock;//回调
+
 
 @end
