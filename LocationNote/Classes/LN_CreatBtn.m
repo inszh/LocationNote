@@ -36,8 +36,7 @@
 - (void)configBallView
 {
     self.userInteractionEnabled=YES;
-    self.image=[UIImage imageNamed:@"tabbar_compose_icon_add"];
-    self.backgroundColor=LHColor(125, 223, 81);
+    self.image=[UIImage imageNamed:@"detail_post_ugc_h"];
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(createNote)];
     [self addGestureRecognizer:tapGes];
     

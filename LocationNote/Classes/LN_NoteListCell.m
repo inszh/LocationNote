@@ -47,14 +47,14 @@
         UILabel *listTitleLab=[[UILabel alloc]init];
         self.listTitleLab=listTitleLab;
         listTitleLab.numberOfLines=0;
-        listTitleLab.font=[UIFont systemFontOfSize:15];
+        listTitleLab.font=[UIFont systemFontOfSize:18];
         [self.contentView addSubview:listTitleLab];
         
         
         UILabel *listSubTitleLab=[[UILabel alloc]initWithFrame:CGRectMake(MaxX(self.timeLab)+10,MaxY(self.listTitleLab)+5, ScreenW-MaxX(self.timeLab)-20, 30)];
         self.listSubTitleLab=listSubTitleLab;
         self.listSubTitleLab.numberOfLines=0;
-        self.listSubTitleLab.font=[UIFont systemFontOfSize:14];
+        self.listSubTitleLab.font=[UIFont systemFontOfSize:20];
         self.listSubTitleLab.contentMode=UIViewContentModeTop;
         self.listSubTitleLab.textColor=[UIColor darkGrayColor];
         [self.contentView addSubview:self.listSubTitleLab];
@@ -74,7 +74,7 @@
     self.timeLab.frame=CGRectMake(10,5,ScreenW*0.2,[self sizeWithLab:self.timeLab]);
 
     self.listTitleLab.text=dataM.content;
-    self.listTitleLab.frame=CGRectMake(MaxX(self.timeLab)+5,10, ScreenW-MaxX(self.timeLab)-10,[self sizeWithLab:self.listTitleLab]);
+    self.listTitleLab.frame=CGRectMake(MaxX(self.timeLab)+5,5, ScreenW-MaxX(self.timeLab)-10,[self sizeWithLab:self.listTitleLab]);
     
     self.height=MaxY(self.listTitleLab)+20 ;
 

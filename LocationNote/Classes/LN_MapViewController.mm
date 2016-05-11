@@ -42,8 +42,13 @@
     [self.view addSubview:_mapView];
     
     UIButton *locme=[UIButton new];
-    locme.frame=CGRectMake(20, ScreenH-kTopBarHeight-40, 40, 40);
-    [locme setBackgroundImage:[UIImage imageNamed:@"location_me"] forState:0];
+    locme.layer.cornerRadius = 5;
+    locme.layer.masksToBounds = YES;
+    locme.layer.borderColor=LHColor(0, 0, 0).CGColor;
+    locme.layer.borderWidth=2;
+    locme.frame=CGRectMake(20, ScreenH-kTopBarHeight-35, 35, 35);
+    [locme setBackgroundColor:[UIColor whiteColor]];
+    [locme setImage:[UIImage imageNamed:@"default_main_toolbaritem_shortcut_normal"] forState:0];
     [locme addTarget:self action:@selector(locme:) forControlEvents:UIControlEventTouchUpInside];
     [self.mapView addSubview:locme];
     

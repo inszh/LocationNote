@@ -39,6 +39,10 @@
 		49D9E3E61CE22DFD0060B3CD /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E3DB1CE22DFD0060B3CD /* CalendarViewController.m */; };
 		49D9E3E71CE22DFD0060B3CD /* chack.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E3DC1CE22DFD0060B3CD /* chack.png */; };
 		49D9E3E81CE22DFD0060B3CD /* NSDate+WQCalendarLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E3DF1CE22DFD0060B3CD /* NSDate+WQCalendarLogic.m */; };
+		49D9E58D1CE336520060B3CD /* icon_mark0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E58B1CE336520060B3CD /* icon_mark0@2x.png */; };
+		49D9E58F1CE3366C0060B3CD /* detail_post_ugc_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E58E1CE3366C0060B3CD /* detail_post_ugc_h@2x.png */; };
+		49D9E5931CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */; };
+		49D9E5961CE33CBC0060B3CD /* LN_LocationM.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E5951CE33CBC0060B3CD /* LN_LocationM.m */; };
 		49F5814E1CD9D5E9005EE541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5814D1CD9D5E9005EE541 /* main.m */; };
 		49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F581501CD9D5E9005EE541 /* AppDelegate.m */; };
 		49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F581551CD9D5E9005EE541 /* Main.storyboard */; };
@@ -65,8 +69,6 @@
 		49F581A81CD9F003005EE541 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F581A71CD9F003005EE541 /* CoreTelephony.framework */; };
 		49F581AA1CD9F012005EE541 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F581A91CD9F012005EE541 /* libstdc++.6.0.9.tbd */; };
 		49F581AC1CD9F463005EE541 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49F581AB1CD9F463005EE541 /* mapapi.bundle */; };
-		49F5835D1CDAFDF6005EE541 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F5835C1CDAFDF6005EE541 /* add@2x.png */; };
-		49F5835F1CDAFEDA005EE541 /* location_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F5835E1CDAFEDA005EE541 /* location_me@2x.png */; };
 		49F583621CDB0040005EE541 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F583611CDB0040005EE541 /* UIView+Extension.m */; };
 		49F583651CDB20B2005EE541 /* LN_NoteDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */; };
 		49F583671CDB2D31005EE541 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F583661CDB2D31005EE541 /* nav_back@2x.png */; };
@@ -162,6 +164,11 @@
 		49D9E3DD1CE22DFD0060B3CD /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		49D9E3DE1CE22DFD0060B3CD /* NSDate+WQCalendarLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+WQCalendarLogic.h"; sourceTree = "<group>"; };
 		49D9E3DF1CE22DFD0060B3CD /* NSDate+WQCalendarLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WQCalendarLogic.m"; sourceTree = "<group>"; };
+		49D9E58B1CE336520060B3CD /* icon_mark0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_mark0@2x.png"; sourceTree = "<group>"; };
+		49D9E58E1CE3366C0060B3CD /* detail_post_ugc_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "detail_post_ugc_h@2x.png"; sourceTree = "<group>"; };
+		49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_main_toolbaritem_shortcut_normal@2x.png"; sourceTree = "<group>"; };
+		49D9E5941CE33CBC0060B3CD /* LN_LocationM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_LocationM.h; sourceTree = "<group>"; };
+		49D9E5951CE33CBC0060B3CD /* LN_LocationM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_LocationM.m; sourceTree = "<group>"; };
 		49F581491CD9D5E9005EE541 /* LocationNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F5814D1CD9D5E9005EE541 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49F5814F1CD9D5E9005EE541 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -199,8 +206,6 @@
 		49F581A91CD9F012005EE541 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		49F581AB1CD9F463005EE541 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI_Map.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		49F5835A1CDAFDBB005EE541 /* ArkMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArkMacros.h; sourceTree = "<group>"; };
-		49F5835C1CDAFDF6005EE541 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
-		49F5835E1CDAFEDA005EE541 /* location_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_me@2x.png"; sourceTree = "<group>"; };
 		49F583601CDB0040005EE541 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		49F583611CDB0040005EE541 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		49F583631CDB20B2005EE541 /* LN_NoteDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_NoteDetailController.h; sourceTree = "<group>"; };
@@ -429,6 +434,8 @@
 				495C4FAB1CDF074E001BAFB8 /* LN_ComposeToolbar.m */,
 				499E24FA1CE220D8005BEAD7 /* LN_CreatBtn.h */,
 				499E24FB1CE220D8005BEAD7 /* LN_CreatBtn.m */,
+				49D9E5941CE33CBC0060B3CD /* LN_LocationM.h */,
+				49D9E5951CE33CBC0060B3CD /* LN_LocationM.m */,
 				49F584231CDB4000005EE541 /* LN_DataModel.h */,
 				49F584241CDB4000005EE541 /* LN_DataModel.m */,
 				498B35AB1CDC770C009E424D /* LN_UserLocation.h */,
@@ -488,6 +495,9 @@
 		49F5835B1CDAFDF6005EE541 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */,
+				49D9E58E1CE3366C0060B3CD /* detail_post_ugc_h@2x.png */,
+				49D9E58B1CE336520060B3CD /* icon_mark0@2x.png */,
 				499E235F1CE1969E005BEAD7 /* font */,
 				495C4FC51CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png */,
 				495C4FAD1CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png */,
@@ -502,8 +512,6 @@
 				495C4FB61CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png */,
 				495C4FB71CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png */,
 				495C4FB81CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png */,
-				49F5835C1CDAFDF6005EE541 /* add@2x.png */,
-				49F5835E1CDAFEDA005EE541 /* location_me@2x.png */,
 				49F583661CDB2D31005EE541 /* nav_back@2x.png */,
 				499E25031CE224C5005BEAD7 /* tabbar_compose_icon_add@2x.png */,
 			);
@@ -810,18 +818,20 @@
 			files = (
 				499E23641CE1969E005BEAD7 /* AxisStd-Light.otf in Resources */,
 				495C4FB91CDF0D22001BAFB8 /* compose_camerabutton_background_highlighted@2x.png in Resources */,
+				49D9E58F1CE3366C0060B3CD /* detail_post_ugc_h@2x.png in Resources */,
 				495C4FC21CDF0D22001BAFB8 /* compose_toolbar_picture@2x.png in Resources */,
 				499E23631CE1969E005BEAD7 /* AxisStd-ExtraLight.otf in Resources */,
 				49F5815C1CD9D5E9005EE541 /* LaunchScreen.storyboard in Resources */,
 				495C4FC61CDF0DC2001BAFB8 /* compose_toolbar_background@2x.png in Resources */,
-				49F5835D1CDAFDF6005EE541 /* add@2x.png in Resources */,
 				49F581AC1CD9F463005EE541 /* mapapi.bundle in Resources */,
 				495C4FC41CDF0D22001BAFB8 /* compose_trendbutton_background@2x.png in Resources */,
 				495C4FC01CDF0D22001BAFB8 /* compose_mentionbutton_background@2x.png in Resources */,
+				49D9E5931CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png in Resources */,
 				495C4FBF1CDF0D22001BAFB8 /* compose_mentionbutton_background_highlighted@2x.png in Resources */,
 				499E25041CE224C5005BEAD7 /* tabbar_compose_icon_add@2x.png in Resources */,
 				49F581591CD9D5E9005EE541 /* Assets.xcassets in Resources */,
 				495C4FBB1CDF0D22001BAFB8 /* compose_emoticonbutton_background_highlighted@2x.png in Resources */,
+				49D9E58D1CE336520060B3CD /* icon_mark0@2x.png in Resources */,
 				495C4FC31CDF0D22001BAFB8 /* compose_trendbutton_background_highlighted@2x.png in Resources */,
 				495C4FBD1CDF0D22001BAFB8 /* compose_keyboardbutton_background_highlighted@2x.png in Resources */,
 				49D9E3E71CE22DFD0060B3CD /* chack.png in Resources */,
@@ -830,7 +840,6 @@
 				499E23651CE1969E005BEAD7 /* AxisStd-UltraLight.otf in Resources */,
 				49F583671CDB2D31005EE541 /* nav_back@2x.png in Resources */,
 				49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */,
-				49F5835F1CDAFEDA005EE541 /* location_me@2x.png in Resources */,
 				495C4FBE1CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png in Resources */,
 				495C4FBC1CDF0D22001BAFB8 /* compose_emoticonbutton_background@2x.png in Resources */,
 			);
@@ -877,6 +886,7 @@
 				49F584211CDB3A26005EE541 /* CoreProperty.m in Sources */,
 				499E25071CE2281C005BEAD7 /* LN_MapSearchViewController.m in Sources */,
 				49F581961CD9E6A0005EE541 /* BMKTool.m in Sources */,
+				49D9E5961CE33CBC0060B3CD /* LN_LocationM.m in Sources */,
 				49F5836A1CDB32A6005EE541 /* arkConst.m in Sources */,
 				49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */,
 				49F584131CDB3A26005EE541 /* FMResultSet.m in Sources */,

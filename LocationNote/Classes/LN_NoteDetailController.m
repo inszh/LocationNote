@@ -115,7 +115,8 @@
             
         case LN_ComposeToolbarButtonTypeSave: //保存
             [self save];
-            
+            break;
+
         case LN_ComposeToolbarButtonTypeMap: // 位置
             [self searchMap];
             break;
@@ -205,7 +206,8 @@ static char kUserAlertTime;
 - (void)searchMap
 {
     LN_MapSearchViewController *map=[[LN_MapSearchViewController alloc]init];
-    [self presentViewController:map animated:YES completion:nil];
+    UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:map];
+    [self presentViewController:nav animated:YES completion:nil];
 
 }
 

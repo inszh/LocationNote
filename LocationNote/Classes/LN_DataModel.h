@@ -26,6 +26,4 @@
 @property(nonatomic,strong)NSData * pic;
 
 
-
-
 @end
