@@ -10,4 +10,5 @@
 
 @implementation LN_LocationM
 
+
 @end

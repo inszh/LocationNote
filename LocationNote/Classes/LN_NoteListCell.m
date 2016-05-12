@@ -14,6 +14,8 @@
 @property(nonatomic,weak)UILabel *timeLab;
 @property(nonatomic,weak)UILabel *listTitleLab;
 @property(nonatomic,weak)UILabel *listSubTitleLab;
+@property(nonatomic,weak)UIView *line;
+
 
 @end
 
@@ -38,6 +40,9 @@
     self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+
         UILabel *timeLab=[[UILabel alloc]init];
         self.timeLab=timeLab;
         self.timeLab.numberOfLines=0;
@@ -47,17 +52,22 @@
         UILabel *listTitleLab=[[UILabel alloc]init];
         self.listTitleLab=listTitleLab;
         listTitleLab.numberOfLines=0;
-        listTitleLab.font=[UIFont systemFontOfSize:18];
+        listTitleLab.font=[UIFont systemFontOfSize:16];
         [self.contentView addSubview:listTitleLab];
         
         
         UILabel *listSubTitleLab=[[UILabel alloc]initWithFrame:CGRectMake(MaxX(self.timeLab)+10,MaxY(self.listTitleLab)+5, ScreenW-MaxX(self.timeLab)-20, 30)];
         self.listSubTitleLab=listSubTitleLab;
         self.listSubTitleLab.numberOfLines=0;
-        self.listSubTitleLab.font=[UIFont systemFontOfSize:20];
+        self.listSubTitleLab.font=[UIFont systemFontOfSize:13];
         self.listSubTitleLab.contentMode=UIViewContentModeTop;
         self.listSubTitleLab.textColor=[UIColor darkGrayColor];
         [self.contentView addSubview:self.listSubTitleLab];
+        
+        UIView *line=[[UIView alloc]init];
+        line.backgroundColor=LHNewGrayGroundColor;
+        self.line=line;
+        [self.contentView addSubview:line];
         
     }
     
@@ -74,20 +84,26 @@
     self.timeLab.frame=CGRectMake(10,5,ScreenW*0.2,[self sizeWithLab:self.timeLab]);
 
     self.listTitleLab.text=dataM.content;
-    self.listTitleLab.frame=CGRectMake(MaxX(self.timeLab)+5,5, ScreenW-MaxX(self.timeLab)-10,[self sizeWithLab:self.listTitleLab]);
+    DLog(@"%@",dataM.content);
+    self.listTitleLab.frame=CGRectMake(MaxX(self.timeLab)+10,5, ScreenW-MaxX(self.timeLab)-10,[self sizeWithLab:self.listTitleLab]);
     
-    self.height=MaxY(self.listTitleLab)+20 ;
+    self.listSubTitleLab.text=dataM.targetAdress;
+    self.listSubTitleLab.frame=CGRectMake(self.listTitleLab.x-10,MaxY(self.listTitleLab)+5, ScreenW-MaxX(self.timeLab)-10,[self sizeWithLab:self.listSubTitleLab]);
+    
+    self.line.frame=CGRectMake(0, MaxY(self.listSubTitleLab)+5, ScreenW, 1);
+    
+    self.height=MaxY(self.line) ;
 
 }
 
 -(CGFloat)sizeWithLab:(UILabel *)lab
 {
-    CGRect rect = [lab.text boundingRectWithSize:CGSizeMake(lab.width, 1000)//限制最大的宽度和高度
+    CGRect rect = [lab.text boundingRectWithSize:CGSizeMake(ScreenW-MaxX(self.timeLab)-20, 1000)//限制最大的宽度和高度
                                          options:NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesFontLeading  |NSStringDrawingUsesLineFragmentOrigin//采用换行模式
                                       attributes:@{NSFontAttributeName: lab.font}//传入的字体字典
                                          context:nil];
     
-    return rect.size.height;
+    return rect.size.height+10;
 }
 
 @end

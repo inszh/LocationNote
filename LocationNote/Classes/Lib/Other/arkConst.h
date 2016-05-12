@@ -6,4 +6,4 @@ extern NSString *const kAppBMKKey;
 extern CGFloat const kHorizontalMargin;
 extern CGFloat const kVerticalMargin;
 
-
+extern NSString *const kMapSearch;

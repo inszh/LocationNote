@@ -25,6 +25,8 @@
 {
     [super viewDidLoad];
 
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     
     UIBarButtonItem *barBtn=[[UIBarButtonItem alloc]initWithTitle:@"地图" style:UIBarButtonItemStylePlain target:self action:@selector(changeViewModel)];
     self.navigationItem.rightBarButtonItem=barBtn;
@@ -44,8 +46,10 @@
             
             [self.dataArray addObject:dataM];
             
-            [self.tableView reloadData];
         }
+        
+        [self.tableView reloadData];
+
     }];
 
 }
@@ -94,6 +98,12 @@
     
     if (UITableViewCellEditingStyleDelete)
     {
+        
+        LN_DataModel*dataM=self.dataArray[indexPath.row];
+        
+        [LN_DataModel deleteWhere:[NSString stringWithFormat: @"content=%@", dataM.content] resBlock:^(BOOL res) {
+            
+        }];
         [self.dataArray removeObject:self.dataArray[indexPath.row]];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationRight];
     }

@@ -29,7 +29,6 @@
 		499E23651CE1969E005BEAD7 /* AxisStd-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 499E23621CE1969E005BEAD7 /* AxisStd-UltraLight.otf */; };
 		499E24FC1CE220D8005BEAD7 /* LN_CreatBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E24FB1CE220D8005BEAD7 /* LN_CreatBtn.m */; };
 		499E25041CE224C5005BEAD7 /* tabbar_compose_icon_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 499E25031CE224C5005BEAD7 /* tabbar_compose_icon_add@2x.png */; };
-		499E25071CE2281C005BEAD7 /* LN_MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499E25061CE2281C005BEAD7 /* LN_MapSearchViewController.m */; };
 		49D9E3E01CE22DFD0060B3CD /* CalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E3CF1CE22DFD0060B3CD /* CalendarDayCell.m */; };
 		49D9E3E11CE22DFD0060B3CD /* CalendarDayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E3D11CE22DFD0060B3CD /* CalendarDayModel.m */; };
 		49D9E3E21CE22DFD0060B3CD /* CalendarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E3D31CE22DFD0060B3CD /* CalendarHomeViewController.m */; };
@@ -43,6 +42,8 @@
 		49D9E58F1CE3366C0060B3CD /* detail_post_ugc_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E58E1CE3366C0060B3CD /* detail_post_ugc_h@2x.png */; };
 		49D9E5931CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */; };
 		49D9E5961CE33CBC0060B3CD /* LN_LocationM.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E5951CE33CBC0060B3CD /* LN_LocationM.m */; };
+		49D9E59A1CE362080060B3CD /* icon_paopao_madian@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D9E5991CE362080060B3CD /* icon_paopao_madian@2x.png */; };
+		49D9E59D1CE3924A0060B3CD /* LN_MapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D9E59C1CE3924A0060B3CD /* LN_MapSearchViewController.m */; };
 		49F5814E1CD9D5E9005EE541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F5814D1CD9D5E9005EE541 /* main.m */; };
 		49F581511CD9D5E9005EE541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F581501CD9D5E9005EE541 /* AppDelegate.m */; };
 		49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F581551CD9D5E9005EE541 /* Main.storyboard */; };
@@ -144,8 +145,6 @@
 		499E24FA1CE220D8005BEAD7 /* LN_CreatBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_CreatBtn.h; sourceTree = "<group>"; };
 		499E24FB1CE220D8005BEAD7 /* LN_CreatBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_CreatBtn.m; sourceTree = "<group>"; };
 		499E25031CE224C5005BEAD7 /* tabbar_compose_icon_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_compose_icon_add@2x.png"; sourceTree = "<group>"; };
-		499E25051CE2281C005BEAD7 /* LN_MapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_MapSearchViewController.h; sourceTree = "<group>"; };
-		499E25061CE2281C005BEAD7 /* LN_MapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_MapSearchViewController.m; sourceTree = "<group>"; };
 		49D9E3CE1CE22DFD0060B3CD /* CalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayCell.h; sourceTree = "<group>"; };
 		49D9E3CF1CE22DFD0060B3CD /* CalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDayCell.m; sourceTree = "<group>"; };
 		49D9E3D01CE22DFD0060B3CD /* CalendarDayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayModel.h; sourceTree = "<group>"; };
@@ -169,6 +168,9 @@
 		49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_main_toolbaritem_shortcut_normal@2x.png"; sourceTree = "<group>"; };
 		49D9E5941CE33CBC0060B3CD /* LN_LocationM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_LocationM.h; sourceTree = "<group>"; };
 		49D9E5951CE33CBC0060B3CD /* LN_LocationM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_LocationM.m; sourceTree = "<group>"; };
+		49D9E5991CE362080060B3CD /* icon_paopao_madian@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_paopao_madian@2x.png"; sourceTree = "<group>"; };
+		49D9E59B1CE3924A0060B3CD /* LN_MapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LN_MapSearchViewController.h; sourceTree = "<group>"; };
+		49D9E59C1CE3924A0060B3CD /* LN_MapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LN_MapSearchViewController.m; sourceTree = "<group>"; };
 		49F581491CD9D5E9005EE541 /* LocationNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F5814D1CD9D5E9005EE541 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		49F5814F1CD9D5E9005EE541 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -422,10 +424,10 @@
 				49F581831CD9E6A0005EE541 /* Lib */,
 				49F581801CD9E401005EE541 /* LN_MapViewController.h */,
 				49F581811CD9E401005EE541 /* LN_MapViewController.mm */,
+				49D9E59B1CE3924A0060B3CD /* LN_MapSearchViewController.h */,
+				49D9E59C1CE3924A0060B3CD /* LN_MapSearchViewController.m */,
 				49F583631CDB20B2005EE541 /* LN_NoteDetailController.h */,
 				49F583641CDB20B2005EE541 /* LN_NoteDetailController.m */,
-				499E25051CE2281C005BEAD7 /* LN_MapSearchViewController.h */,
-				499E25061CE2281C005BEAD7 /* LN_MapSearchViewController.m */,
 				4950AA941CE16ABE00E2B82F /* LN_NoteListController.h */,
 				4950AA951CE16ABE00E2B82F /* LN_NoteListController.m */,
 				4950AA971CE1906F00E2B82F /* LN_NoteListCell.h */,
@@ -495,6 +497,7 @@
 		49F5835B1CDAFDF6005EE541 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				49D9E5991CE362080060B3CD /* icon_paopao_madian@2x.png */,
 				49D9E5921CE33AB20060B3CD /* default_main_toolbaritem_shortcut_normal@2x.png */,
 				49D9E58E1CE3366C0060B3CD /* detail_post_ugc_h@2x.png */,
 				49D9E58B1CE336520060B3CD /* icon_mark0@2x.png */,
@@ -838,6 +841,7 @@
 				495C4FBA1CDF0D22001BAFB8 /* compose_camerabutton_background@2x.png in Resources */,
 				495C4FC11CDF0D22001BAFB8 /* compose_toolbar_picture_highlighted@2x.png in Resources */,
 				499E23651CE1969E005BEAD7 /* AxisStd-UltraLight.otf in Resources */,
+				49D9E59A1CE362080060B3CD /* icon_paopao_madian@2x.png in Resources */,
 				49F583671CDB2D31005EE541 /* nav_back@2x.png in Resources */,
 				49F581571CD9D5E9005EE541 /* Main.storyboard in Resources */,
 				495C4FBE1CDF0D22001BAFB8 /* compose_keyboardbutton_background@2x.png in Resources */,
@@ -884,7 +888,6 @@
 				495C4FAC1CDF074E001BAFB8 /* LN_ComposeToolbar.m in Sources */,
 				49F584251CDB4000005EE541 /* LN_DataModel.m in Sources */,
 				49F584211CDB3A26005EE541 /* CoreProperty.m in Sources */,
-				499E25071CE2281C005BEAD7 /* LN_MapSearchViewController.m in Sources */,
 				49F581961CD9E6A0005EE541 /* BMKTool.m in Sources */,
 				49D9E5961CE33CBC0060B3CD /* LN_LocationM.m in Sources */,
 				49F5836A1CDB32A6005EE541 /* arkConst.m in Sources */,
@@ -906,6 +909,7 @@
 				49F584201CDB3A26005EE541 /* CoreModelConst.m in Sources */,
 				49D9E3E11CE22DFD0060B3CD /* CalendarDayModel.m in Sources */,
 				49F584221CDB3A26005EE541 /* NSObject+Runtime.m in Sources */,
+				49D9E59D1CE3924A0060B3CD /* LN_MapSearchViewController.m in Sources */,
 				49F584101CDB3A26005EE541 /* FMDatabaseAdditions.m in Sources */,
 				49D9E3E01CE22DFD0060B3CD /* CalendarDayCell.m in Sources */,
 				49F584161CDB3A26005EE541 /* CoreModel+Cache.m in Sources */,

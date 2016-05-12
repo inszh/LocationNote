@@ -28,7 +28,7 @@
         [self addButtonWithIcon:@"compose_toolbar_picture" highIcon:@"compose_toolbar_picture_highlighted" title:nil tag:LN_ComposeToolbarButtonTypePicture];
         [self addButtonWithIcon:nil highIcon:nil title:@"提醒" tag:LN_ComposeToolbarButtonTypeCalendar];
         [self addButtonWithIcon:nil highIcon:nil title:@"位置" tag:LN_ComposeToolbarButtonTypeMap];
-        [self addButtonWithIcon:nil highIcon:nil title:@"保存" tag:LN_ComposeToolbarButtonTypeSave];
+//        [self addButtonWithIcon:nil highIcon:nil title:@"保存" tag:LN_ComposeToolbarButtonTypeSave];
 
 //        self.dateButton = [self addButtonWithIcon:nil highIcon:nil title:@"闹钟" tag:LN_ComposeToolbarButtonTypedate];
     }

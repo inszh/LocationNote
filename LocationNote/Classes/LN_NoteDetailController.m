@@ -14,9 +14,10 @@
 #import "UIView+Extension.h"
 #import "CalendarHomeViewController.h"
 #import "LN_MapSearchViewController.h"
+#import "LN_LocationM.h"
 
 
-@interface LN_NoteDetailController ()<BMKLocationServiceDelegate,LN_ComposeToolbarDelegate>
+@interface LN_NoteDetailController ()<BMKLocationServiceDelegate,LN_ComposeToolbarDelegate,ln_MapSearchViewControllerDelegate>
 
 @property(nonatomic,strong)UITextView * contentTextView;
 @property(nonatomic,strong)BMKLocationService * locService;
@@ -25,7 +26,7 @@
 @property(nonatomic,copy)NSString *dateStr;
 @property(nonatomic,copy)NSString *timeStr;
 @property (nonatomic, assign, getter = isChangingKeyboard) BOOL changingKeyboard;
-
+@property(nonatomic,strong)LN_DataModel *dataM;
 
 @end
 
@@ -38,7 +39,7 @@
     [self setupLocation];
     
     [self setupTextView];
-    
+
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     // 键盘即将隐藏, 就会发出UIKeyboardWillHideNotification
@@ -49,11 +50,15 @@
     
     leftBack.imageInsets = UIEdgeInsetsMake(0, -20, 0, 0);
     self.navigationItem.leftBarButtonItem = leftBack;
-    // Do any additional setup after loading the view.
     
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:(UIBarButtonItemStylePlain) target:self action:@selector(save)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+    
+    LN_DataModel *dataM=[[LN_DataModel alloc] init];
+    
+    self.dataM=dataM;
     
 }
-
 
 - (void)pop
 {
@@ -165,15 +170,15 @@ static char kUserAlertTime;
 - (void)save
 {    
     BMKUserLocation *userLocation=objc_getAssociatedObject(self, &kUserLocation);
-    LN_DataModel *dataM=[LN_DataModel new];
-    dataM.currentPosition=[NSString stringWithFormat:@"%f|%f", userLocation.location.coordinate.latitude ,userLocation.location.coordinate.longitude];
+    
+    self.dataM.currentPosition=[NSString stringWithFormat:@"%f|%f", userLocation.location.coordinate.latitude ,userLocation.location.coordinate.longitude];
 //    dataM.hostID =arc4random() ;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy MM dd|HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy MM dd|HH:mm"];
     NSString *strDate = [dateFormatter stringFromDate:[NSDate date]];
-    dataM.saveTime=strDate;
-    dataM.content=self.contentTextView.text;
+    self.dataM.saveTime=strDate;
+    self.dataM.content=self.contentTextView.text;
     
     NSDateFormatter *dateFormatterHH = [[NSDateFormatter alloc] init];
     [dateFormatterHH setDateFormat:@"HH:mm:ss"];
@@ -189,12 +194,16 @@ static char kUserAlertTime;
     }else if (!self.dateStr){
         fireDateStr=[NSString stringWithFormat:@"%@ %@",YYDate,self.timeStr];
     }
+
     DLog(@"%@",fireDateStr);
     
-    dataM.alertTime=fireDateStr;
-    [LN_DataModel insert:dataM resBlock:^(BOOL res) {
+    self.dataM.alertTime=fireDateStr;
+    
+    if (!self.dataM) return;
+    
+    [LN_DataModel insert:self.dataM resBlock:^(BOOL res) {
         
-        objc_setAssociatedObject(self, &kUserCacheData, dataM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        objc_setAssociatedObject(self, &kUserCacheData, self.dataM, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 
         [self setupAlert];
         
@@ -206,9 +215,9 @@ static char kUserAlertTime;
 - (void)searchMap
 {
     LN_MapSearchViewController *map=[[LN_MapSearchViewController alloc]init];
+    map.delegate=self;
     UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:map];
     [self presentViewController:nav animated:YES completion:nil];
-
 }
 
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
@@ -290,7 +299,12 @@ static char kUserAlertTime;
     
 }
 
+-(void)ln_searchViewdidCilckDone:(LN_MapSearchViewController *)searchVc seletM:(LN_LocationM *)dataM
+{
+    self.dataM.targetPosition=[NSString stringWithFormat:@"%f|%f", dataM.coor.latitude ,dataM.coor.longitude];
+    self.dataM.targetAdress=[NSString stringWithFormat:@"%@%@", dataM.city,dataM.district];
 
+}
 
 
 @end

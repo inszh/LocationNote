@@ -17,6 +17,8 @@
 
 @property(nonatomic,copy)NSString * targetPosition;
 
+@property(nonatomic,copy)NSString * targetAdress;
+
 @property(nonatomic,copy)NSString * saveTime;
 
 @property(nonatomic,copy)NSString * alertTime;
