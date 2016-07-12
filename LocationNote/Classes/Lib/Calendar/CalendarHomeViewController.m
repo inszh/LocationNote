@@ -93,6 +93,7 @@
     picker.frame=CGRectMake(0, ScreenH-150, ScreenW, 150);
     [self.view addSubview:picker];
     
+    UIToolbar *tool=[[UIToolbar alloc]init];
 }
 
 -(void)dateChanged:(UIDatePicker *)picker
